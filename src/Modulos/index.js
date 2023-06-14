@@ -44,6 +44,8 @@ console.log(changeName_js_1.someName);
 const all = __importStar(require("./all.js"));
 console.log(all);
 class User {
+    name;
+    age;
     constructor(name, age) {
         this.name = name;
         this.age = age;

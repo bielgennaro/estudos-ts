@@ -1,6 +1,8 @@
 "use strict";
 // 1 - Campos em classes
 class User {
+    name;
+    age;
 }
 const gabriel = new User();
 gabriel.name = 'Gabriel';
@@ -8,6 +10,8 @@ gabriel.age = 20;
 console.log(gabriel);
 // 2 - constructor
 class NewUser {
+    name;
+    age;
     constructor(name, age) {
         this.name = name;
         this.age = age;
@@ -18,8 +22,9 @@ console.log(joao);
 //const pedro = new NewUser('Pedro', "20");
 // 3 - campos readonly
 class Car {
+    name;
+    brand2 = "VW";
     constructor(name) {
-        this.brand2 = "VW";
         this.name = name;
     }
 }
@@ -28,12 +33,14 @@ console.log(Fusca);
 fusca.name = "Fusca turbo";
 // 4 - herança e super
 class Machine {
+    name;
     constructor(name) {
         this.name = name;
     }
 }
 const trator = new Machine('Trator');
 class killerMachine extends Machine {
+    guns;
     constructor(name, guns) {
         super(name);
         this.guns = guns;
@@ -44,6 +51,7 @@ console.log(trator);
 console.log(destroyer);
 // 5 - métodos
 class Dwarf {
+    name;
     constructor(name) {
         this.name = name;
     }
@@ -56,6 +64,8 @@ console.log(kimmy.name);
 kimmy.greeting();
 // 6 - this
 class Truck2 {
+    model;
+    hp;
     constructor(model, hp) {
         this.model = model;
         this.hp = hp;
@@ -68,6 +78,8 @@ const volvo = new Truck2("FH", 500);
 volvo.showDetails();
 // 7 - getters
 class Person2 {
+    name;
+    surname;
     constructor(name, surname) {
         this.name = name;
         this.surname = surname;
@@ -80,6 +92,8 @@ const gabrielZirondi = new Person2("Gabriel", "Zirondi");
 console.log(gabrielZirondi.fullName);
 // 8 - setters
 class Coords {
+    x;
+    y;
     set fillX(x) {
         if (x == 0) {
             return;
@@ -103,6 +117,7 @@ myCoords.fillX = 10;
 myCoords.fillY = 20;
 console.log(myCoords.getCoords);
 class blogPost {
+    title;
     constructor(title) {
         this.title = title;
     }
@@ -113,6 +128,7 @@ class blogPost {
 const myPost = new blogPost("Ola mundo");
 console.log(myPost.itemTitle());
 class TestingInterface {
+    title;
     constructor(title) {
         this.title = title;
     }
@@ -141,17 +157,13 @@ Private: só pode ser acessado pela classe que o define
 */
 // 11.1 - public
 class B {
-    constructor() {
-        this.x = 10;
-    }
+    x = 10;
 }
 const bInstance = new B();
 console.log(bInstance.x);
 // 11.2 - protected
 class E {
-    constructor() {
-        this.x = 10;
-    }
+    x = 10;
     protectedMethod() {
         console.log("protected method");
     }
@@ -166,9 +178,7 @@ const fInstance = new F();
 console.log(fInstance.showMethods());
 // 11.3 - private
 class PrivateClass {
-    constructor() {
-        this.name = "Gabriel";
-    }
+    name = "Gabriel";
     showName() {
         return this.name;
     }
@@ -193,15 +203,17 @@ class TestingPrivate extends PrivateClass {
 */
 // 12 - static members
 class StaticMember {
+    static prop = "Teste static";
     static staticMethod() {
         console.log("Static method");
     }
 }
-StaticMember.prop = "Teste static";
 console.log(StaticMember.prop);
 StaticMember.staticMethod();
 // 13 - generic classes
 class Item {
+    first;
+    second;
     constructor(first, second) {
         this.first = first;
         this.second = second;
@@ -216,6 +228,10 @@ const secondItem = new Item(10, true);
 console.log(secondItem.showFirst);
 // 14 - parameters properties
 class parametersProperties {
+    name;
+    cpf;
+    age;
+    address;
     constructor(name, cpf, age, address) {
         this.name = name;
         this.cpf = cpf;
@@ -240,6 +256,7 @@ console.log(newPerson.showCpf);
 console.log(newPerson.showAddress);
 // 15 - class expressions
 const myClass = class {
+    name;
     constructor(name) {
         this.name = name;
     }
@@ -250,6 +267,7 @@ console.log(pessoa);
 class Abstract {
 }
 class AbstractClass extends Abstract {
+    name;
     constructor(name) {
         super();
         this.name = name;
@@ -262,8 +280,10 @@ const abstractObj = new AbstractClass("Gabriel");
 abstractObj.showName();
 // 17 - relacoes entre classes
 class Dog {
+    name;
 }
 class Cat {
+    name;
 }
 const doguinho = new Cat();
 console.log(doguinho);
