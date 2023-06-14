@@ -380,3 +380,17 @@ class AbstractClass extends Abstract {
 
 const abstractObj = new AbstractClass("Gabriel")
 abstractObj.showName()
+
+// 17 - relacoes entre classes
+class Dog {
+    name!: string;
+
+}
+
+class Cat {
+    name!: string;
+}
+
+const doguinho: Dog = new Cat()
+console.log(doguinho)
+
